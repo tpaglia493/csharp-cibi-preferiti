@@ -16,6 +16,10 @@ Stampate a video anche il cibo di mezza classifica, cioè che si trova nella pos
 Potrebbe essere interessante creare una funzione chiamata indiciMedianaArray(int lunghezzaArray)
 che vi restituisce l'indice della posizione mediana (che restituisca gli indici delle eventuali posizioni mediani)
 e poi fare una funzione (StampaArrayMediana) che si occupa di fare tutto il lavoro con  la funzione precedente
-e richiedendo direttamente l'intero array. Attenzione: gestire anche il caso se aveste una classifica con un numero di elementi pari. In questo caso vanno stampati i 2 elementi in centro alla vostra classifica. 
+e richiedendo direttamente l'intero array. Attenzione: gestire anche il caso se aveste una classifica con un numero di elementi pari. 
+In questo caso vanno stampati i 2 elementi in centro alla vostra classifica. 
  */
+
+string[] FavouriteFoods = { "Crépes", "Carbonara", "Risotto alla crema di scampi", "Fettuccine al tartufo", "Pizza", "Hamburger" };
+
 
