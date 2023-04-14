@@ -1,11 +1,6 @@
 ﻿
 /*Nome repo: csharp-cibi-preferiti
-Create un progetto App Console CibiPreferiti con Visual Studio.
-Nel programma inizializzate un array con la classifica dei vostri cibi preferiti (minimo 5, massimo 10 elementi). 
-L’array deve essere già inizializzato nel programma ordinato già con i cibi dal più preferito al meno preferito, 
-e i vostri cibi preferiti non vanno chiesti all’utente tramite input (hard-coded).
-Una volta dichiarato l’array di cibi preferiti, stampate a video le seguenti informazioni:
-La lunghezza della classifica
+
 La vostra classifica (dunque stampare l’intero array in ordine indicando la posizione in classifica)
 Il vostro cibo top (prima posizione della classifica)
 Il vostro cibo preferito ma non troppo (ultima posizione della classifica)
@@ -21,18 +16,30 @@ e richiedendo direttamente l'intero array. Attenzione: gestire anche il caso se 
 In questo caso vanno stampati i 2 elementi in centro alla vostra classifica. 
  */
 
+//----------------- PROGRAMMA PRINCIPALE ----------------------
+
 string[] FavouriteFoods = { "Crépes", "Carbonara", "Risotto alla crema di scampi", "Fettuccine al tartufo", "Pizza", "Hamburger" };
 
-CalculateAndDisplayArrayLength(FavouriteFoods);
+DisplayArrayLength(FavouriteFoods);
+
+Console.WriteLine("La classifica è la seguente:");
+DisplayArrayElementsByIndex(FavouriteFoods);
 
 
 //---------------------- FUNZIONI -----------------------------
 
 //FUNZIONE PER CALCOLARE E STAMPARE LA LUNGHEZZA DELL'ARRAY
 
-void CalculateAndDisplayArrayLength(string[] array)
+void DisplayArrayLength(string[] array)
 { int ArrayLength = array.Length;
     Console.WriteLine($"Nella lista ci sono {ArrayLength} elementi");
 }
 
-
+//FUNZIONE PER STAMAPARE GLI ELEMENTI DELL'ARRAY IN ORDINE DI INDICE CRESCENTE
+void DisplayArrayElementsByIndex(string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.WriteLine($"Al {i+1}° posto: {array[i]}");
+    }
+}
