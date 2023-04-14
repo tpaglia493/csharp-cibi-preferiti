@@ -1,4 +1,5 @@
-﻿/*Nome repo: csharp-cibi-preferiti
+﻿
+/*Nome repo: csharp-cibi-preferiti
 Create un progetto App Console CibiPreferiti con Visual Studio.
 Nel programma inizializzate un array con la classifica dei vostri cibi preferiti (minimo 5, massimo 10 elementi). 
 L’array deve essere già inizializzato nel programma ordinato già con i cibi dal più preferito al meno preferito, 
@@ -21,5 +22,17 @@ In questo caso vanno stampati i 2 elementi in centro alla vostra classifica.
  */
 
 string[] FavouriteFoods = { "Crépes", "Carbonara", "Risotto alla crema di scampi", "Fettuccine al tartufo", "Pizza", "Hamburger" };
+
+CalculateAndDisplayArrayLength(FavouriteFoods);
+
+
+//---------------------- FUNZIONI -----------------------------
+
+//FUNZIONE PER CALCOLARE E STAMPARE LA LUNGHEZZA DELL'ARRAY
+
+void CalculateAndDisplayArrayLength(string[] array)
+{ int ArrayLength = array.Length;
+    Console.WriteLine($"Nella lista ci sono {ArrayLength} elementi");
+}
 
 
