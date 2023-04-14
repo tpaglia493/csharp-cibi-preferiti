@@ -1,7 +1,6 @@
 ﻿
 /*
 BONUS
-Chiedere all'utente quanti cibi preferiti ha, e farglieli inserite da input della Console nell'array.
 Stampate a video anche il cibo di mezza classifica, cioè che si trova nella posizione mediana. 
 Potrebbe essere interessante creare una funzione chiamata indiciMedianaArray(int lunghezzaArray)
 che vi restituisce l'indice della posizione mediana (che restituisca gli indici delle eventuali posizioni mediani)
@@ -11,8 +10,6 @@ In questo caso vanno stampati i 2 elementi in centro alla vostra classifica.
  */
 
 //----------------- PROGRAMMA PRINCIPALE ----------------------
-
-
 
 string[] ArrayFromUser = CreateArrayFromInput();
 
@@ -24,6 +21,7 @@ DisplayArrayFirstPosition(ArrayFromUser);
 
 DisplayArrayLastPosition(ArrayFromUser);
 
+DisplayArrayMiddlePosition(ArrayFromUser);
 
 //---------------------- FUNZIONI -----------------------------
 
@@ -43,9 +41,7 @@ string[] CreateArrayFromInput()
     return array;
 }
 
-
 //FUNZIONE PER CALCOLARE E STAMPARE LA LUNGHEZZA DELL'ARRAY
-
 void DisplayArrayLength(string[] array)
 {
     int ArrayLength = array.Length;
@@ -73,4 +69,26 @@ void DisplayArrayLastPosition(string[] array)
 {
     int ArrayLastPosition = array.Length - 1;
     Console.WriteLine($"The last position in the array is: {array[ArrayLastPosition]}");
+}
+
+//FUNZIONE PER STAMPARE LE POSIZIONI MEDIANE DI UN ARRAY
+void DisplayArrayMiddlePosition(string[] array)
+{
+    int ArrayLength = array.Length;
+    int ArrayMiddlePosition = ArrayLength / 2;
+    int ArrayMiddlePositionPari = ArrayMiddlePosition - 1;
+    if (array.Length % 2 != 0)
+    {
+        //MIDDLE POSITION OF AN ARRAY IF DISPARI
+        Console.WriteLine($"The middle position of the array is:");
+        Console.WriteLine($"{ArrayMiddlePosition + 1}) {array[ArrayMiddlePosition]}");
+    }
+    else
+    {
+        //MIDDLE POSTIONS OF AN ARRAY IF PARI
+        Console.WriteLine($"The middle positions of the array are:");
+        Console.WriteLine($"{ArrayMiddlePositionPari + 1}) {array[ArrayMiddlePositionPari]}");
+        Console.WriteLine($"{ArrayMiddlePosition + 1}) {array[ArrayMiddlePosition]}");
+        ;
+    }
 }
