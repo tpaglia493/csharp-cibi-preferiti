@@ -1,15 +1,7 @@
 ﻿
-/*
-BONUS
-Stampate a video anche il cibo di mezza classifica, cioè che si trova nella posizione mediana. 
-Potrebbe essere interessante creare una funzione chiamata indiciMedianaArray(int lunghezzaArray)
-che vi restituisce l'indice della posizione mediana (che restituisca gli indici delle eventuali posizioni mediani)
-e poi fare una funzione (StampaArrayMediana) che si occupa di fare tutto il lavoro con  la funzione precedente
-e richiedendo direttamente l'intero array. Attenzione: gestire anche il caso se aveste una classifica con un numero di elementi pari. 
-In questo caso vanno stampati i 2 elementi in centro alla vostra classifica. 
- */
-
 //----------------- PROGRAMMA PRINCIPALE ----------------------
+
+using System;
 
 string[] ArrayFromUser = CreateArrayFromInput();
 
@@ -21,24 +13,42 @@ DisplayArrayFirstPosition(ArrayFromUser);
 
 DisplayArrayLastPosition(ArrayFromUser);
 
-DisplayArrayMiddlePosition(ArrayFromUser);
+DisplayArrayMiddlePositions(ArrayFromUser);
 
 //---------------------- FUNZIONI -----------------------------
 
 //FUNZIONE PER CREARE ARRAY DA INPUT
 string[] CreateArrayFromInput()
 {
+    int ArrayLengthFromInput;
+    string[] array;
+
     Console.Write("How long should the list be? ");
-    int ArrayLengthFromInput = int.Parse(Console.ReadLine());
+ 
+        try
+        {
+            ArrayLengthFromInput = int.Parse(Console.ReadLine());
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Please insert a number ");
+            Console.Write("How long should the list be? ");
+            ArrayLengthFromInput = int.Parse(Console.ReadLine());
+        }
+        
+    
 
-    string[] array = new string[ArrayLengthFromInput];
+    array = new string[ArrayLengthFromInput];
 
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write($"Please insert position #{i + 1}  ");
-        array[i] = Console.ReadLine();
-    }
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write($"Please insert position #{i + 1}  ");
+                array[i] = Console.ReadLine();
+            }
+
     return array;
+
+
 }
 
 //FUNZIONE PER CALCOLARE E STAMPARE LA LUNGHEZZA DELL'ARRAY
@@ -72,23 +82,24 @@ void DisplayArrayLastPosition(string[] array)
 }
 
 //FUNZIONE PER STAMPARE LE POSIZIONI MEDIANE DI UN ARRAY
-void DisplayArrayMiddlePosition(string[] array)
+void DisplayArrayMiddlePositions(string[] array)
 {
     int ArrayLength = array.Length;
     int ArrayMiddlePosition = ArrayLength / 2;
-    int ArrayMiddlePositionPari = ArrayMiddlePosition - 1;
+    int ArrayMiddlePositionEven = ArrayMiddlePosition - 1;
     if (array.Length % 2 != 0)
     {
-        //MIDDLE POSITION OF AN ARRAY IF DISPARI
+        //MIDDLE POSITION OF AN ARRAY IF ODDS
         Console.WriteLine($"The middle position of the array is:");
         Console.WriteLine($"{ArrayMiddlePosition + 1}) {array[ArrayMiddlePosition]}");
     }
     else
     {
-        //MIDDLE POSTIONS OF AN ARRAY IF PARI
+        //MIDDLE POSTIONS OF AN ARRAY IF EVEN
         Console.WriteLine($"The middle positions of the array are:");
-        Console.WriteLine($"{ArrayMiddlePositionPari + 1}) {array[ArrayMiddlePositionPari]}");
+        Console.WriteLine($"{ArrayMiddlePositionEven + 1}) {array[ArrayMiddlePositionEven]}");
         Console.WriteLine($"{ArrayMiddlePosition + 1}) {array[ArrayMiddlePosition]}");
         ;
     }
 }
+
