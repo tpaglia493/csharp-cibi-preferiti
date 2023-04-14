@@ -1,6 +1,5 @@
 ﻿
 /*Nome repo: csharp-cibi-preferiti
-Il vostro cibo preferito ma non troppo (ultima posizione della classifica)
 Cercate per ogni richiesta che viene fatta di preparare le rispettive funzioni  e di usarle nel vostro programma principale!
 Le modalità di consegna sono le solite: repo GitHub, commit e push
 BONUS
@@ -49,12 +48,12 @@ void DisplayArrayElementsByIndex(string[] array)
 //FUNZIONE PER STAMPARE LA PRIMA POSIZIONE DELL'ARRAY
 void DisplayArrayFirstPosition(string[] array)
 {
-    Console.WriteLine($"The first position in the array is:{array[0]}");
+    Console.WriteLine($"The first position in the array is: {array[0]}");
 }
 
 //FUNZIONE PER STAMPARE L'ULTIMA POSIZIONE DELL'ARRAY
 void DisplayArrayLastPosition(string[] array)
 {
     int ArrayLastPosition = array.Length - 1;
-    Console.WriteLine($"The last position in the array is:{array[ArrayLastPosition]}");
+    Console.WriteLine($"The last position in the array is: {array[ArrayLastPosition]}");
 }
